@@ -1,0 +1,45 @@
+
+.login-form{
+    margin: 0px auto;
+}
+.login-form i {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    color: #fff;
+    padding: 8px;
+    margin: 0px 13px;
+    cursor: pointer;
+}
+.login-form .fa-facebook-f {
+    background-color: #0c2d78;
+}
+.login-form .fa-twitter {
+    background-color: #466abb;
+}
+.login-form .fa-google-plus-g {
+    background-color: #bd5173;;
+}
+
+.login-design{
+    text-align: left;
+}
+
+.login-form-design{
+    margin: initial;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+.login-design button {
+    width: 100%;
+    border: none;
+    background-image: linear-gradient(to right bottom, #1c1d1d, #182528, #132d36, #0c3446, #103a57);
+    color: #fff;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 8px 0px;
+    border-radius: 9px;
+}

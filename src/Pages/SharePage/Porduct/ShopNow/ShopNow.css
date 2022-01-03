@@ -1,0 +1,30 @@
+
+
+.card-design {
+    width: 200px;
+    background: #f8f8f8;
+    height: 25rem;
+    transition: transform .9s;
+}
+.card-design:hover{
+    transform: scale(1.2);
+}
+.card-design img{
+    width: 200px;
+}
+.card-design button {
+    border: 1px solid #2976aa;
+    width: 200px;
+    background: #0E1E38;
+    color: #fff;
+    padding: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    display: none;
+}
+.card-design:hover button {
+    display: block;
+}
+.shopNow img{
+
+}

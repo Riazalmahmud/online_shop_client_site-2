@@ -1,0 +1,24 @@
+
+
+.contact-form {
+    width: 60%;
+    margin: 0px auto;
+    text-align: left;
+    font-weight: bold;
+}
+.contact-form-design{
+    width: 97%;
+    margin: 0px auto;
+    padding: 48px;
+}
+.contact-form-design input, label {
+    margin: 0px 5px;
+}
+
+.contact-form-design textarea {
+    width: 100%;
+    margin-left: 4px;
+    height: 200px;
+    border: 1px solid #2976aa;
+    background: #f8f9fa;
+}

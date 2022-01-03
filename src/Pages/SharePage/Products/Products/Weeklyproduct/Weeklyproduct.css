@@ -1,0 +1,26 @@
+
+.weeklyproduct{
+    position: relative;
+    transition: .8s;
+}
+.weeklyproduct:hover{
+
+transform: scale(1.5);
+
+}
+
+
+.weeklyproduct img{
+width: 200px;
+height: 200px;
+background-color: rgb(219, 219, 218);
+}
+
+.weeklyproduct h6 {
+    position: absolute;
+    top: 127px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+}

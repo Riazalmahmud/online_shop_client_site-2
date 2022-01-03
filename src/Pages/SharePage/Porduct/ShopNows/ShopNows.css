@@ -1,0 +1,15 @@
+.shop-product {
+    display: flex;
+    align-items: center;
+}
+.shop-text {
+    text-align: center;
+    border: 2px solid #2976AA;
+    width: 30%;
+    margin: 0px auto;
+}
+.shop-product .hr-tag {
+    background: #2976aa;
+    height: 2px;
+    width: 35%;
+}

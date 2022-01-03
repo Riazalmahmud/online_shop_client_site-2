@@ -1,0 +1,17 @@
+
+
+.weekly-product {
+    display: flex;
+    align-items: center;
+}
+.weekly-text {
+    text-align: center;
+    border: 2px solid #2976AA;
+    width: 20%;
+    margin: 0px auto;
+}
+.weekly-product .hr-tag {
+    background: #2976aa;
+    height: 2px;
+    width: 40%;
+}

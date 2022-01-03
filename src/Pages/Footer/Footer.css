@@ -1,0 +1,30 @@
+
+.footer-about {
+    margin-top: 50px;
+}
+.footer-section {
+    background-color: #1e252c;
+    color: #fff;
+    
+}
+
+.footer-about i {
+    padding: 10px;
+    margin: 0px 5px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: #2c2a2a;
+    color: #efeeeb;
+}
+.footer-service{
+    margin-top: 50px;
+}
+.footer-service a{
+text-decoration: none;
+display: block;
+text-align: left;
+color: white;
+margin-left: 80px;
+}
