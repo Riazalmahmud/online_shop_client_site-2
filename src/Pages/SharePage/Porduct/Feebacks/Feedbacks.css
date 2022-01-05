@@ -1,0 +1,17 @@
+
+
+.testimonial-section{
+    height: 350px;
+    }
+    .testimonial-section img{
+    height: 350px;
+    }
+    .author-name i {
+        color: #f1da3a;
+        padding:5px;
+    }
+    .author-name img{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+    }

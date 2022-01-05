@@ -1,77 +1,96 @@
-import React, { useEffect, useState } from 'react';
-import { Carousel } from 'react-bootstrap';
-import testimonialImage from '../../../../image/testimonial/testimonial.png'
-import testimonialImage01 from '../../../../image/testimonial/riaz.jpg';
-import './Testimonial.css'
+import React, { useEffect, useState } from "react";
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+import userPic from "../../../../image/user-one.png";
+import "./Testimonial.css";
+import Feedbacks from "../Feebacks/Feedbacks.js";
+import Rating from "@mui/material/Rating";
+const rating = 5;
 const Testimonial = () => {
- const [testimonials, setTestimonials] = useState([]);
-    
-    useEffect(() => {
-        fetch("http://localhost:5000/feedbacks")
-            .then(res => res.json())
-        .then(data=> console(data))
-    },[])
-    return (
-        <div>
-            <div className="testimonial-section">
-                <Carousel>
-                    <Carousel.Item interval={1000}>
-                        <img
-                            className="d-block w-100"
-                            src={testimonialImage}
-                            alt="First slide"
-                        />
-                        <Carousel.Caption className="author-name">
-
-                            <img src={testimonialImage01} alt="" />
-                            <h3>Mr : Riaz Hosse </h3>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item interval={500}>
-                        <img
-                            className="d-block w-100"
-                            src={testimonialImage}
-                            alt="slider slide"
-                        />
-                        <Carousel.Caption className="author-name">
-                            <img src={testimonialImage01} alt="" />
-
-                            <h3>Mr : Riaz Hossen</h3>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={testimonialImage}
-                            alt="First slide"
-                        />
-                        <Carousel.Caption className="author-name">
-                            <img src={testimonialImage01} alt="" />
-                            <h3>Mr : Riaz Hossen </h3>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>
-            </div>
+  const [testiMonials, setTestiMonials] = useState([]);
+  console.log(testiMonials);
+  useEffect(() => {
+    fetch("http://localhost:5000/feedbacks")
+      .then((res) => res.json())
+      .then((data) => setTestiMonials(data));
+  }, []);
+  // Owl Carousel Settings
+  const options = {
+    loop: true,
+    center: true,
+    items: 3,
+    margin: 0,
+    autoplay: true,
+    dots: true,
+    autoplayTimeout: 3000,
+    smartSpeed: 300,
+    nav: false,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 3,
+      },
+      1000: {
+        items: 3,
+      },
+    },
+  };
+  return (
+    <section id="testimonial" className="testimonials pt-70 pb-70">
+      <div className="container mt-5">
+        <h4 className="miniTitle text-center">TESTIMONIALS</h4>
+        <div className="text-center ">
+          <h3 className="sectionTitle">What Our Clients are Saying?</h3>
         </div>
-    );
+        <p className="text-center ">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna.
+        </p>
+        <div className="row">
+          <div className="col-md-12">
+            <OwlCarousel
+              id="customer-testimonoals"
+              className="owl-carousel owl-theme"
+              {...options}
+            >
+              {testiMonials.length === 0 ? (
+                <div className="item">
+                  <h5>Review Looding ....</h5>
+                  <div class="shadow-effect">
+                    <img className="img-circle" src={userPic} />
+
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore
+                      magna.
+                    </p>
+                  </div>
+                  <div className="testimonial-name">
+                    <h5>Riaz al mahmud </h5>
+                    <small>Bangladesh</small>
+                    <Rating name="read-only" value={rating} readOnly />
+                  </div>
+                </div>
+              ) : (
+                testiMonials.map((testiMonialDetail) => {
+                  console.log();
+                  return (
+                    <Feedbacks
+                      testiMonialDetail={testiMonialDetail}
+                      key={testiMonialDetail._key}
+                    />
+                  );
+                })
+              )}
+            </OwlCarousel>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Testimonial;

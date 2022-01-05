@@ -20,6 +20,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Wish from './Pages/Wish/Wish';
 import Notfound from './Pages/Notfound/Notfound';
 import Footer from './Pages/Footer/Footer';
+import Testimonial from './Pages/SharePage/Porduct/Testimonial/Testimonial.js';
 function App() {
   return (
     <div className="App">
@@ -47,6 +48,9 @@ function App() {
             </Route>
             <Route path="/Contact">
               <Contact></Contact>
+            </Route>
+            <Route path="/testimonial">
+              <Testimonial></Testimonial>
             </Route>
             <Route path="/login">
               <Login></Login>
