@@ -9,7 +9,7 @@ import Rating from "@mui/material/Rating";
 const rating = 5;
 const Testimonial = () => {
   const [testiMonials, setTestiMonials] = useState([]);
-  console.log(testiMonials);
+  // console.log(testiMonials);
   useEffect(() => {
     fetch("http://localhost:5000/feedbacks")
       .then((res) => res.json())
