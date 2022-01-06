@@ -7,8 +7,6 @@ const MenShopings = () => {
   const [shopProduct, setShopProduct] = useState([]);
   const shopingInfo = { user: user.displayName, email: user.email };
   const [addCart, setAddCart] = useState(shopingInfo);
-  console.log(addCart);
-  console.log(addCart);
   useEffect(() => {
     fetch("http://localhost:5000/products")
       .then((res) => res.json())
@@ -37,6 +35,9 @@ const MenShopings = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.insertedId) {
+          alert("added successfully");
+        }
       });
   };
 

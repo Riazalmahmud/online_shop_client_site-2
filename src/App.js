@@ -40,7 +40,7 @@ function App() {
             <Route path="/AddProduct">
               <AddProduct></AddProduct>
             </Route>
-            <Route path="/productManage/:manage">
+            <Route path="/productManage">
               <ProductManage></ProductManage>
             </Route>
             <Route exact path="/">
@@ -61,7 +61,6 @@ function App() {
             <Route path="/Dashboard">
               <Dashboard></Dashboard>
             </Route>
-
             <Route path="/Wish">
               <Wish></Wish>
             </Route>
