@@ -1,0 +1,15 @@
+.total-text {
+  width: 70%;
+  height: 4px;
+  background-color: #dc3545;
+  margin: 0px auto;
+}
+.proceed-checkout {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  width: 68%;
+  font-weight: bold;
+  padding: 6px;
+  margin: 0px auto;
+}
