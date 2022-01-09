@@ -16,11 +16,13 @@ const Feedback = () => {
 
   const onSubmit = (data) => {
     const rateCount = { ...data, rating: rating / 20 };
-    axios.post("http://localhost:5000/feedbacks", rateCount).then((res) => {
-      if (res.data.insertedId) {
-        <Alert severity="success">Successfully Rating publish </Alert>;
-      }
-    });
+    axios
+      .post("https://obscure-fjord-46479.herokuapp.com/feedbacks", rateCount)
+      .then((res) => {
+        if (res.data.insertedId) {
+          <Alert severity="success">Successfully Rating publish </Alert>;
+        }
+      });
     reset();
   };
   return (

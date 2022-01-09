@@ -6,14 +6,21 @@ import "./ProductManage.css";
 const ProductManage = () => {
   const { user } = useAuth();
   const [product, setproduct] = useState([]);
-
+  const [cart, setCart] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/shopManage?email=${user.email}`;
+    const url = `https://obscure-fjord-46479.herokuapp.com/shopManage?email=${user.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setproduct(data));
   }, []);
-
+  const handaleOnBlur = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const newCart = { ...cart };
+    newCart[field] = value;
+    setCart(newCart);
+    console.log("onchange click", setCart);
+  };
   return (
     <div>
       <h5>hello porduct={product.length} </h5>
@@ -66,6 +73,7 @@ const ProductManage = () => {
                       <TextField
                         id="outlined-number"
                         label="Number"
+                        onBlur={handaleOnBlur}
                         type="number"
                         InputLabelProps={{
                           shrink: true,

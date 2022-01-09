@@ -11,7 +11,7 @@ const Testimonial = () => {
   const [testiMonials, setTestiMonials] = useState([]);
   // console.log(testiMonials);
   useEffect(() => {
-    fetch("http://localhost:5000/feedbacks")
+    fetch("https://obscure-fjord-46479.herokuapp.com/feedbacks")
       .then((res) => res.json())
       .then((data) => setTestiMonials(data));
   }, []);
@@ -80,7 +80,7 @@ const Testimonial = () => {
                   return (
                     <Feedbacks
                       testiMonialDetail={testiMonialDetail}
-                      key={testiMonialDetail._key}
+                      key={testiMonialDetail._id}
                     />
                   );
                 })

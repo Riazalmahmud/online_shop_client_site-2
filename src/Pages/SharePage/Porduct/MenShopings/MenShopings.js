@@ -8,13 +8,13 @@ const MenShopings = () => {
   const shopingInfo = { user: user.displayName, email: user.email };
   const [addCart, setAddCart] = useState(shopingInfo);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://obscure-fjord-46479.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setShopProduct(data));
   }, []);
 
   const handaleAdd = (id) => {
-    const uri = `http://localhost:5000/products/${id}`;
+    const uri = `https://obscure-fjord-46479.herokuapp.com/products/${id}`;
     fetch(uri)
       .then((res) => res.json())
       .then((data) => setAddCart(data));
@@ -25,7 +25,7 @@ const MenShopings = () => {
       email: user.email,
     };
 
-    fetch("http://localhost:5000/shopManage", {
+    fetch("https://obscure-fjord-46479.herokuapp.com/shopManage", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -55,7 +55,7 @@ const MenShopings = () => {
         <Row xs={1} md={5} className="g-5">
           {shopProduct.slice(0, 5).map((product) => (
             <MenShoping
-              key={product.id}
+              key={product._id}
               product={product}
               handaleAdd={handaleAdd}
             ></MenShoping>
